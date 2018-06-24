@@ -20,10 +20,10 @@
     if($_SCtype == "초") $_SCtype = 2;
     if($_SCtype == "중") $_SCtype = 3;
     if($_SCtype == "고") $_SCtype = 4;
-    $_Mcode = $res['meal'];
-    if($_Mcode == "조") $_Mcode = 1;
-    if($_Mcode == "중") $_Mcode = 2;
-    if($_Mcode == "석") $_Mcode = 3;
+    $_Mcode = $_GET['meal'];
+    if($_Mcode == "조식") $_Mcode = 1;
+    if($_Mcode == "중식") $_Mcode = 2;
+    if($_Mcode == "석식") $_Mcode = 3;
     $_Date = $_GET['date'];
 
     //parse with Snoopy class
@@ -45,6 +45,9 @@
     $fin = preg_replace('/[0-9@.]*/', '', $fin);
     $fin = str_replace('<br />', ',', $fin);
     $fin = substr_replace($fin, '', -1);
+    if($fin=="") $fin = "오늘의 식단이 없습니다.";
+
+    //output
     echo '<pre>{<br>';
     echo '  "학교명":"'.$_SCname.'",<br>';
     echo '  "일자":"'.$_Date.'",<br>';
