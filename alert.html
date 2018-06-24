@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>ALERT</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    </head>
+    <body>
+        <div style="margin: 20%">
+            <center>
+                <h2 class="marjor">Alert!</h2>
+                <p><?php echo($_GET['text']); ?></p>
+                <?php
+                    if($_GET['back']=="1") { 
+                        echo '<ul class="actions">';
+                        echo '	<a class="button" href="javascript:history.back()">Back</a>';
+                        echo '</ul>';
+                    }
+                ?>
+                <a href="./"><p>Main</p></a>
+            </center>
+        </div>
+    </body>
+</html>
