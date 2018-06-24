@@ -1,20 +1,10 @@
 <?php
-    $loc = array(
-        '서울'=>'sen',
-        '부산'=>'pen'
-        '대구'=>'dge'
-        '인천'=>'ice'
-        '광주'=>'gen'
-        '대전'=>'dje'
-        '울산'=>'use'
-        '세종'=>'sje'
-        '경기'=>'goe'
-        '강원'=>'kwe'
-        '충북'=>'cbe'
-        '충남'=>'cne'
-        '전북'=>'jbe'
-        '전남'=>'jne'
-        '경북'=>'gbe'
-        '경남'=>'gne'
-        '제주'=>'jje');
+    $_SCname = $_GET['scname'];
+    $_SCcode = $_GET['sccode'];
+    $_SCloc = $_GET['scloc'];
+    $_SCkin = $_GET['sckin'];
+    $_Mcode = $_GET['mcode'];
+    $_Date = $_GET['date'];
+    $URL = "https://stu.goe.go.kr/sts_sci_md01_001.do?schulCode=$_SCcode&&schulCrseScCode=$_SCkin&schMmealScCode=$_Mcode&schYmd=$_Date";
+    echo $URL;
 ?>
