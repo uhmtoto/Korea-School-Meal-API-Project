@@ -24,7 +24,7 @@
         $redirect_URL = "등록을 실패했습니다.<br>다시 한번 시도해 주세요.";
     }
     else { //success
-        $redirect_URL = "등록을 성공했습니다.<br>당신의 API 키는 ".$randomString."입니다.<br>자세한 사용방법은 이 곳을 참고 해주세요.";
+        $redirect_URL = "등록을 성공했습니다.<br>당신의 API 키는 ".$randomString."입니다.<br>자세한 사용방법은 메인 페이지를 참고 해주세요.";
     }
     Header("Location: http://uhmsh2018.iwinv.net/mealapi/alert.html?text=$redirect_URL");
 ?>

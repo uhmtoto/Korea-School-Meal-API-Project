@@ -7,6 +7,9 @@
     //set API key from GET method
     $_APIKEY = $_GET['apikey'];
 
+    //reported by KJSMAN (2018.06.25)
+    mysql_real_escape_string($_APIKEY, $conn);
+
     //SQL query
     $Query = "SELECT * FROM `api` WHERE `apikey`='$_APIKEY'";
     $res = mysql_query($Query, $conn);
@@ -23,9 +26,9 @@
     if($_SCtype == "초") $_SCtype = 2;
     if($_SCtype == "중") $_SCtype = 3;
     if($_SCtype == "고") $_SCtype = 4;
-    if($_Mcode == "조식") $_Mcode = 1;
-    if($_Mcode == "중식") $_Mcode = 2;
-    if($_Mcode == "석식") $_Mcode = 3;
+    if($_Mcode == "조") $_Mcode = 1;
+    if($_Mcode == "중") $_Mcode = 2;
+    if($_Mcode == "석") $_Mcode = 3;
 
     //parse with Snoopy class
     $URL = "https://stu.$_SCloc.go.kr/sts_sci_md01_001.do?schulCode=$_SCcode&schulCrseScCode=$_SCtype&schMmealScCode=$_Mcode&schYmd=$_Date";

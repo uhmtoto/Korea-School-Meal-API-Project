@@ -1,39 +1,43 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>대한민국 급식 API</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
 
-		<!-- Header -->
-		<header id="header">
-			<div class="content">
-				<h1><a href="#">대한민국 급식 API</a></h1>
-				<p>전국 초.중.고의 급식정보를 받아올 수 있는<br />
-				최고의 급식 API</a></p>
-				<ul class="actions">
-					<li><a href="#getapi" class="button primary">Get Started!</a></li>
-				</ul>
-			</div>
-			<div class="image phone"><div class="inner"><img src="images/screen.png" alt="" /></div></div>
-		</header>
+<head>
+    <title>대한민국 급식 API</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
 
-		<!-- Get API -->
-		<section id="getapi" class="wrapper">
-			<form method="post" action="./lib/generate_api.php">
-				<div class="row gtr-uniform" style="padding: 0px 15% 0px 15%">
-					<div class="col-12 col-12-xsmall">
-						<h3>API 발급</h3>
-					</div>
-					<div class="col-6 col-12-xsmall">
-						<input type="text" name="scname" id="scname" maxlength="20" placeholder="학교 이름" required/>
-					</div>
-					<div class="col-6 col-12-xsmall">
-						<select name="scloc" id="scloc" required>
+<body class="is-preload">
+
+    <!-- Header -->
+    <header id="header">
+        <div class="content">
+            <h1><a href="#">대한민국 급식 API</a></h1>
+            <p>전국 초.중.고의 급식정보를 받아올 수 있는<br /> 최고의 급식 API</a>
+            </p>
+            <ul class="actions">
+                <li><a href="#getapi" class="button primary">Get Started!</a></li>
+            </ul>
+        </div>
+        <div class="image phone">
+            <div class="inner"><img src="images/screen.png" alt="" /></div>
+        </div>
+    </header>
+
+    <!-- Get API -->
+    <section id="getapi" class="wrapper">
+        <form method="post" action="./lib/generate_api.php">
+            <div class="row gtr-uniform" style="padding: 0px 15% 0px 15%">
+                <div class="col-12 col-12-xsmall">
+                    <h3>API 발급</h3>
+                </div>
+                <div class="col-6 col-12-xsmall">
+                    <input type="text" name="scname" id="scname" maxlength="20" placeholder="학교 이름" required/>
+                </div>
+                <div class="col-6 col-12-xsmall">
+                    <select name="scloc" id="scloc" required>
 							<?php
 								include_once('./config/data.php');
 								foreach ($loc as $key => $value) {
@@ -41,49 +45,122 @@
 								}
 							?>
 						</select>
-					</div>
-					<div class="col-6 col-12-xsmall">
-						<input type="text" name="sccode" id="sccode" maxlength="10" placeholder="학교 코드" required/>
-					</div>
-					<div class="col-6 col-12-xsmall">
-						<input type="email" name="usrmail" id="usrmail" maxlength="50" placeholder="이메일" required/>
-					</div>
-					<div class="col-6 col-12-xsmall">
-						<select name="sctype" id="sctype" required>
+                </div>
+                <div class="col-6 col-12-xsmall">
+                    <input type="text" name="sccode" id="sccode" maxlength="10" placeholder="학교 코드" required/>
+                </div>
+                <div class="col-6 col-12-xsmall">
+                    <input type="email" name="usrmail" id="usrmail" maxlength="50" placeholder="이메일" required/>
+                </div>
+                <div class="col-6 col-12-xsmall">
+                    <select name="sctype" id="sctype" required>
 							<option value="초">초등학교</option>
 							<option value="중">중학교</option>
 							<option value="고">고등학교</option>
 						</select>
-					</div>
-					<div class="col-6 col-12-xsmall">
-						<input type="text" name="rea" id="rea" maxlength="50" placeholder="사용목적" required/>
-					</div>
-					<div class="col-12">
-						<ul class="actions">
-							<li><input type="submit" value="발급" class="primary" /></li>
-							<li><input type="reset" value="초기화" /></li>
-						</ul>
-					</div>
+                </div>
+                <div class="col-6 col-12-xsmall">
+                    <input type="text" name="rea" id="rea" maxlength="50" placeholder="사용목적" required/>
+                </div>
+                <div class="col-12">
+                    <ul class="actions">
+                        <li><input type="submit" value="발급" class="primary" /></li>
+                        <li><input type="reset" value="초기화" /></li>
+                    </ul>
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <section id="howto" class="wrapper">
+        <div class="row gtr-uniform" style="padding: 0px 15% 0px 15%">
+            <div class="col-12 col-12-xsmall">
+                <h3>API 발급 후, 사용법</h3>
+            </div>
+            <div class="col-6 col-12-xsmall">
+                <h4>파라미터</h4>
+            </div>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Field Name</th>
+                            <th>Length</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>apikey</td>
+                            <td>10</td>
+                            <td>발급 받은 API키</td>
+                        </tr>
+                        <tr>
+                            <td>date</td>
+                            <td>8</td>
+                            <td>조회하고 싶은 날짜(YYYYMMDD)</td>
+                        </tr>
+                        <tr>
+                            <td>meal</td>
+                            <td>1</td>
+                            <td>조식/중식/석식 중 조회할 식단 선택 (조/중/석 중 한글자)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-12 col-12-xsmall">
+                <p>Ex) http://uhmsh2018.iwinv.net/api.php?apikey=**********&date=YYYYMMDD&meal=*</p>
+			</div>
+        </div>
+	</section>
+	
+	<section id="helper" class="wrapper">
+		<form method="get" action="lib/helper.php">		
+			<div class="row gtr-uniform" style="padding: 0px 15% 0px 15%">
+				<div class="col-6 col-12-xsmall">
+					<h3>Helper</h3>
 				</div>
-			</form>
-		</section>
+				<div class="col-12 col-12-xsmall">
+					<p>혹시 위에 있는 설명으로 부족하실 분들을 위해,<br>
+					더 쉽게 이 API를 사용할 수 있는 방법이 있습니다!<br>
+					여기에 정보를 입력해서 JSON 결과가 나오는 URL을 바로 얻을 수 있습니다!</p>
+				</div>
+				<div class="col-6 col-12-xsmall">
+					<input type="text" name="key" maxlength="10" placeholder="API KEY" required/>
+				</div>
+				<div class="col-6 col-12-xsmall">
+					<select name="meal" required>
+						<option value="조">조식</option>
+						<option value="중">중식</option>
+						<option value="석">석식</option>
+					</select>
+				</div>
+				<div class="col-6 col-12-xsmall">
+					<input type="date" name="date" placeholder="날짜" required/>
+				</div>
+				<div class="col-12">
+					<ul class="actions">
+						<li><input type="submit" value="제출" class="primary" /></li>
+						<li><input type="reset" value="초기화" /></li>
+					</ul>
+				</div>
+			</div>
+		</form>
+	</section>
 
-		<!-- Footer -->
-			<footer id="footer">
-				<!--
-				<ul class="icons">
-					<li><a href="" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-				</ul>
-				-->
-				<p class="copyright">&copy; UHMTOTO, 2018 <br>TEMPLATE BY: <a href="http://html5up.net">HTML5 UP</a></p>
-			</footer>
+    <!-- Footer -->
+    <footer id="footer">
+        <p class="copyright">&copy; UHMTOTO, 2018 <br>TEMPLATE BY: <a href="http://html5up.net">HTML5 UP</a></p>
+    </footer>
 
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
 </html>
