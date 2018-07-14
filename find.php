@@ -27,14 +27,15 @@
                     <tbody>
                         <?php
                             include_once('config/dbconfig.php');
+                            include_once('lib/alert.php');
                             $mail = $_POST['mail'];
                             if(!preg_match('/^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i', $mail)) {
-                                header('Location: http://uhmsh2018.iwinv.net/mealapi/alert.html?text=올바른 이메일 주소를 입력해주세요!');
+                                alert("올바른 이메일 주소를 입력해주세요!");
                             }
                             $query = "select * from api where `usrmail` = '$mail'";
                             $res = mysql_query($query, $conn);
                             if(mysql_num_rows($res) == 0) {
-                                header("Location: http://uhmsh2018.iwinv.net/mealapi/alert.html?text=검색 결과가 없습니다.");
+                                alert("검색 결과가 없습니다.");
                                 exit();
                             }
                             else {

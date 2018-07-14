@@ -62,6 +62,9 @@
                 <div class="col-6 col-12-xsmall">
                     <input type="text" name="rea" id="rea" maxlength="50" placeholder="사용목적" required/>
                 </div>
+                <div class="col-6">
+                    <p>학교 코드는 <a href="https://www.meatwatch.go.kr/biz/bm/sel/schoolListPopup.do">여기</a>서 확인하실 수 있습니다!</p>
+                </div>
                 <div class="col-12">
                     <ul class="actions">
                         <li><input type="submit" value="발급" class="primary" /></li>
@@ -127,9 +130,6 @@
                     </tbody>
                 </table>
             </div>
-            <div class="col-12 col-12-xsmall">
-                <p>Ex) http://uhmsh2018.iwinv.net/api.php?apikey=**********&date=YYYYMMDD&meal=*</p>
-			</div>
         </div>
 	</section>
 	
@@ -155,7 +155,7 @@
 					</select>
 				</div>
 				<div class="col-6 col-12-xsmall">
-					<input type="date" name="date" placeholder="날짜" required/>
+					<input type="text" name="date" maxlength="8" placeholder="날짜 (YYYYMMDD)" required/>
 				</div>
 				<div class="col-12">
 					<ul class="actions">
