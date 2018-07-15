@@ -1,5 +1,5 @@
 <?php
     function alert($text) {
-        header("Location: http://uhmsh2018.iwinv.net/mealapi/alert.html?text=".$text);
+        header("Location: https://www.uhmtoto.xyz/mealapi/alert.html?text=".$text);
     }
 ?>

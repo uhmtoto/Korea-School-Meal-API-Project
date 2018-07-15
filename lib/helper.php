@@ -10,7 +10,7 @@
     /* 쿼리 폼 바꿔서 필요 없어짐 */
     //$date = str_replace('-', '', $meal);
 
-    $URL = "http://uhmsh2018.iwinv.net/mealapi/api.php?apikey=$key&date=$date&meal=$meal";
+    $URL = "https://www.uhmtoto.xyz/mealapi/api.php?apikey=$key&date=$date&meal=$meal";
     $URL = str_replace('&', '%26', $URL);
 
     $y = substr($date, 0, 4);
