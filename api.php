@@ -3,12 +3,16 @@
     include_once('./config/data.php');
     include_once('./config/dbconfig.php');
     include_once('./lib/snoopy/Snoopy.class.php');
+    include_once('./lib/alert.php');
 
     //set API key from GET method
     $_APIKEY = $_GET['apikey'];
 
     //reported by KJSMAN (2018.06.25)
     mysql_real_escape_string($_APIKEY, $conn);
+    if(!preg_match('/[A-Za-z0-9]{8}/', $_APIKEY)) {
+        alert("올바른 API KEY를 입력해 주세요!");
+    }
 
     //SQL query
     $Query = "SELECT * FROM `api` WHERE `apikey`='$_APIKEY'";
